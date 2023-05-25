@@ -3,37 +3,37 @@ import './Form.css'
 
 
 export default function Form(props) {
+    const [checked, setChecked] = useState(true)
+    const [showErrorMsg, setShowErrorMsg] = useState(false)
+    const [errorMsg, setErrorMsg] = useState(<></>)
 
-    const handleName = (e) => {
-        e.preventDefault()
-        props.setUsername(e.target.value)
-        console.log(e.target.value)
-    }
-
-    const handleEmail = (e) => {
-    }
-
-    const handleComment = (e) => {
-    }
 
     const handleSubmit = (e) => {
         e.preventDefault()
         props.setShowModal(true)
-        // props.setUsername(e.target.value)
+        props.setUsername(e.target.name.value)
+        e.target.reset()
     }
 
 
   return (
     <div id="form">
-        <form action="">
+        <form action="" onSubmit={handleSubmit}>
             <h1>Name</h1>
-            <input type='text' id='nameInput' placeholder='Name' defaultValue='' onChange={handleName} />
+            <input type='text' id='nameInput' name='name' placeholder='Name' />
             <h1>Email</h1>
-            <input type='text' id='emailInput' placeholder='Email' onChange={handleEmail}/>
+            <input type='text' id='emailInput' name='email' placeholder='Email' />
             <h1>Question/Comment</h1>
-            <input type='text' id='commentInput' placeholder='Question/Comment' onChange={handleComment}/>
+            <input type='text' id='commentInput' name='comment' placeholder='Question/Comment' />
             <br />
-            <input type='Submit' id='submitButton' defaultValue='Submit' onClick={handleSubmit}/>
+            <p onClick={() => setChecked(!checked)}>
+                <input type='checkbox' id='receiveEmails' name='receiveEmails' checked={checked} value={checked}/>
+                Receive marketing emails
+            </p>
+
+            <br />
+            <input type='Submit' id='submitButton' defaultValue='Submit' />
+            {showErrorMsg && errorMsg}
         </form>
     </div>
   )

@@ -5,4 +5,8 @@
     left:30%;
     padding:5%;
     transform: translate(-50%,-50%)
-  }
+}
+
+.errorBox {
+    border: 2px solid red;
+}
