@@ -32,7 +32,7 @@ export default function Form(props) {
     }, [email])
     
     useEffect(()=>{
-        if (name && email && comment){
+        if (name && isEmailValid(email) && comment){
             setShowErrorMsg(false)
         }
     }, [name, comment, email])
