@@ -10,6 +10,7 @@ export default function Form(props) {
     const [name, setName] = useState()
     const [email, setEmail] = useState()
     const [comment, setComment] = useState()
+    const [optIn, setOptIn] = useState()
     
     const normalBorder = {border: "2px solid pink"}
     const errorBorder = {border: "3px dashed red"}
@@ -35,21 +36,22 @@ export default function Form(props) {
         e.preventDefault()
         let name = e.target.name.value
         let email = e.target.email.value
-        let valid = isEmailValid(email)
         let comment = e.target.comment.value
+        
+        // validate email
+        let valid = isEmailValid(email)
 
-        setShowErrorMsg(true)
-        if (!valid) {
+        if (!name || !email || !comment) {
+            setShowErrorMsg(true)
+            setErrorMsg(p => <div id="error-msg">Please fill out all fields.</div>);
+            if (!name) setNameBorder(errorBorder)
+            if (!email) setEmailBorder(errorBorder)
+            if (!comment) setCommentBorder(errorBorder)
+        } else if (!valid) {
+            setShowErrorMsg(true)
             setErrorMsg(p => <div id="error-msg">Email is invalid.</div>)
             setEmailBorder(errorBorder)
-        }
-        if (!name || !email || !comment) setErrorMsg(p => <div id="error-msg">Please fill out all fields.</div>);
-        if (!name) setNameBorder(errorBorder)
-        if (!email) setEmailBorder(errorBorder)
-        if (!comment) setCommentBorder(errorBorder)
-
-
-        if (name && isEmailValid && comment) {
+        } else {
             props.setShowModal(true)
             props.setUsername(name)
             e.target.reset()
@@ -64,14 +66,41 @@ export default function Form(props) {
             <div className='card'>
                 <form action="" onSubmit={handleSubmit} className='contact-form'>
                     <h1>Name</h1>
-                    <input class='form-input' type='text' id='nameInput' name='name' placeholder='Name' style={nameBorder} onChange={(e)=>{setName(e.target.value)}} />
+                    <input 
+                        className='form-input' 
+                        type='text' 
+                        id='nameInput' 
+                        name='name' 
+                        placeholder='Name' 
+                        style={nameBorder} 
+                        onChange={(e)=>{setName(e.target.value)}} />
                     <h1>Email</h1>
-                    <input class='form-input' type='text' id='emailInput' name='email' placeholder='Email' style={emailBorder} onChange={(e)=>{setEmail(e.target.value)}} />
+                    <input 
+                        className='form-input' 
+                        type='text' 
+                        id='emailInput' 
+                        name='email' 
+                        placeholder='Email' 
+                        style={emailBorder} 
+                        onChange={(e)=>{setEmail(e.target.value)}} />
+
                     <h1>Question/Comment</h1>
-                    <textarea id='commentInput' rows='7' name='comment' placeholder='Question/Comment' style={commentBorder} onChange={(e)=>{setComment(e.target.value)}}></textarea>
+                    <textarea 
+                        id='commentInput' 
+                        rows='7' 
+                        name='comment' 
+                        placeholder='Tell us what you think' 
+                        style={commentBorder}
+                        onChange={(e)=>{setComment(e.target.value)}}></textarea>
                     <br />
                     <p onClick={() => setChecked(!checked)}>
-                        <input type='checkbox' id='receiveEmails' name='receiveEmails' checked={checked} value={checked}/>
+                        <input 
+                            type='checkbox' 
+                            id='receiveEmails' 
+                            name='receiveEmails' 
+                            checked={checked} 
+                            value={checked} 
+                            onChange={(e)=>{setOptIn(e.target.value)}} />
                         Receive marketing emails
                     </p>
                     {showErrorMsg && errorMsg}

@@ -7,15 +7,7 @@ import { useState } from 'react';
 function App() {
   const [showModal, setShowModal] = useState(false)
   const [username, setUsername] = useState('friend')
-  // const [formInfo, setFormInfo] = useState('')
-  // console.log('reloaded app')
-
-  // const handleSubmit = (e) => {
-  //     e.preventDefault()
-  //     setShowModal(true)
-  // }
   
-  // <img src={logo} className="App-logo" alt="logo" />
   return (
     <>
     <div className="App">
