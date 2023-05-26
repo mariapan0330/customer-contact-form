@@ -21,6 +21,7 @@ export default function Form(props) {
     const isEmailValid = (email) => {
         return /^[a-zA-Z0-9]+@[a-zA-Z0-9]+\.[A-Za-z]+$/.test(email)
     }
+    
 
     useEffect(() => {
         if (name) setNameBorder(normalBorder)
@@ -37,14 +38,23 @@ export default function Form(props) {
         }
     }, [name, comment, email])
 
+    const postData = () => {
+        var formData = JSON.stringify({
+            name: name,
+            email: email,
+            comment: comment
+        })
+        // === send post request to an API here ===
+    }
+
     const handleSubmit = (e) => {
         e.preventDefault()
-        let name = e.target.name.value
-        let email = e.target.email.value
-        let comment = e.target.comment.value
+        var name = e.target.name.value
+        var email = e.target.email.value
+        var comment = e.target.comment.value
         
         // validate email
-        let valid = isEmailValid(email)
+        var valid = isEmailValid(email)
 
         if (!name || !email || !comment) {
             setShowErrorMsg(true)
@@ -57,6 +67,7 @@ export default function Form(props) {
             setErrorMsg(p => <div id="error-msg">Email is invalid.</div>)
             setEmailBorder(errorBorder)
         } else {
+            postData()
             props.setShowModal(true)
             props.setUsername(name)
             e.target.reset()
