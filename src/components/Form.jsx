@@ -30,7 +30,12 @@ export default function Form(props) {
     useEffect(()=>{
         if (isEmailValid(email)) setEmailBorder(normalBorder)
     }, [email])
-
+    
+    useEffect(()=>{
+        if (name && email && comment){
+            setShowErrorMsg(false)
+        }
+    }, [name, comment, email])
 
     const handleSubmit = (e) => {
         e.preventDefault()
@@ -55,14 +60,16 @@ export default function Form(props) {
             props.setShowModal(true)
             props.setUsername(name)
             e.target.reset()
+            setChecked(true)
+            setShowErrorMsg(false)
         }
     }
 
 
   return (
     <>
-    <div className="form123">
-        <div id="form" className='form-container'>
+    <div id="form">
+        <div className='form-container'>
             <div className='card'>
                 <form action="" onSubmit={handleSubmit} className='contact-form'>
                     <h1>Name</h1>
@@ -101,7 +108,7 @@ export default function Form(props) {
                             checked={checked} 
                             value={checked} 
                             onChange={(e)=>{setOptIn(e.target.value)}} />
-                        Receive marketing emails
+                        Receive marketing and offer emails
                     </p>
                     {showErrorMsg && errorMsg}
                     <br />

@@ -7,6 +7,7 @@
     width: 100vw;
     height: 100vh;
     background-color: rgba(99, 99, 99, 0.446);
+    font-family: 'Righteous', sans-serif;
 }
 
 .modal-card {
@@ -19,7 +20,6 @@
 #modal-btn {
     background-color: #c74175;
     color: white;
-    font-weight: bold;
     padding: 10px 20px;
     border: none;
     border-radius: 5px;

@@ -1,7 +1,9 @@
-.form123 {
+#form {
     /* background texture from https://www.transparenttextures.com/escheresque.html */
     background-image: url('../images/escheresque-1920x1080.png');
     background-repeat: repeat;
+    font-family: 'Righteous', sans-serif;
+
 }
 
 .form-container{
@@ -14,7 +16,6 @@
 
 h1, p {
     color: #c74175;
-    font-family: 'Righteous', sans-serif;
 }
 
 
@@ -36,7 +37,7 @@ h1, p {
     padding: 10px;
     border: 2px solid pink;
     border-radius: 5px;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Righteous', sans-serif;
 }
 
 #commentInput {
@@ -50,6 +51,6 @@ h1, p {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    font-family: 'Righteous', sans-serif;
     font-size: large;
+    font-family: 'Righteous', sans-serif;
 }
