@@ -2,7 +2,6 @@
     /* background texture from https://www.transparenttextures.com/escheresque.html */
     background-image: url('../images/escheresque-1920x1080.png');
     background-repeat: repeat;
-    background-size: 100vw;
 }
 
 .form-container{
@@ -25,8 +24,10 @@ h1, p {
     box-shadow: 0px 5px 10px #a32555;
 }
 
-.errorBox {
-    border: 2px solid red;
+#error-msg {
+    color:rgb(177, 29, 29);
+    font-weight: bold;
+    padding-bottom: 3px;
 }
 
 .form-input, #commentInput {

@@ -7,7 +7,8 @@ import { useState } from 'react';
 function App() {
   const [showModal, setShowModal] = useState(false)
   const [username, setUsername] = useState('friend')
-  console.log('reloaded app')
+  // const [formInfo, setFormInfo] = useState('')
+  // console.log('reloaded app')
 
   // const handleSubmit = (e) => {
   //     e.preventDefault()
