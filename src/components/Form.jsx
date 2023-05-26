@@ -23,6 +23,7 @@ export default function Form(props) {
 
 
   return (
+    <>
     <div className="form123">
         <div id="form" className='form-container'>
             <div className='card'>
@@ -43,6 +44,7 @@ export default function Form(props) {
                 </form>
             </div>
         </div>
-    </div>
+        </div>
+    </>
   )
 }

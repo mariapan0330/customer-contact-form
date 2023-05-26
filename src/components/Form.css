@@ -1,13 +1,16 @@
+.form123 {
+    /* background texture from https://www.transparenttextures.com/escheresque.html */
+    background-image: url('../images/escheresque-1920x1080.png');
+    background-repeat: repeat;
+    background-size: 100vw;
+}
+
 .form-container{
     display:flex;
     align-items: center;
     justify-content: center;
     height:100vh;
-    /* background-color: gold; */
-    /* background-color: rgb(241,118,166); */
-    background: linear-gradient(45deg, #e081a7 10%, #c22762 50%, #f7d1e0 50%);
-
-
+    
 }
 
 h1, p {
