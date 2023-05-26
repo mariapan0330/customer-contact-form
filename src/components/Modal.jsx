@@ -8,7 +8,7 @@ export default function Modal(props) {
           <h1>Thanks, {props.username}!</h1>
           <h4>Your comment has been submitted.</h4>
           <br/>
-          <button onClick={() => {props.setShowModal(false)}}>Close</button>
+          <button id='modal-btn' onClick={() => {props.setShowModal(false)}}>Close</button>
       </div>
     </div>
   )

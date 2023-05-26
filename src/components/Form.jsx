@@ -9,15 +9,19 @@ export default function Form(props) {
 
 
     const handleSubmit = (e) => {
+        e.preventDefault()
+        let name = e.target.name.value
+        let email = e.target.email.value
+        let comment = e.target.comment.value
+
         // TODO:
         // Don't submit empty or partially filled out forms
         // validate email regex tho no need to verify email
         // Set up info to send to an API (incl time/day)
-        // pls make prettier for the love of everything
 
-        e.preventDefault()
+        if (e.target)
         props.setShowModal(true)
-        props.setUsername(e.target.name.value)
+        props.setUsername(name)
         e.target.reset()
     }
 

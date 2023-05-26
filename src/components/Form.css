@@ -40,8 +40,9 @@ h1, p {
 #submitBtn{
     background-color: #c74175;
     color: white;
+    font-weight: bold;
     padding: 10px 20px;
     border: none;
-    border-radius: 4px;
+    border-radius: 5px;
     cursor: pointer;
 }

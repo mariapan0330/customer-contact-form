@@ -15,3 +15,13 @@
     border-radius: 25px;
     box-shadow: 0px 0px 15px rgb(121, 120, 120);
 }
+
+#modal-btn {
+    background-color: #c74175;
+    color: white;
+    font-weight: bold;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
