@@ -1,12 +1,44 @@
-#form{
-    background-color: rgb(241, 174, 174);
-    position:absolute;
-    top:30%;
-    left:30%;
-    padding:5%;
-    transform: translate(-50%,-50%)
+.form-container{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    height:100vh;
+    /* background-color: gold; */
+    /* background-color: rgb(241,118,166); */
+    background: linear-gradient(45deg, #e081a7 10%, #c22762 50%, #f7d1e0 50%);
+
+
+}
+
+h1, p {
+    color: #c74175;
+}
+
+
+.card {
+    background-color: rgb(255, 239, 248);
+    padding: 50px;
+    border-radius: 25px;
+    box-shadow: 0px 5px 10px #a32555;
 }
 
 .errorBox {
     border: 2px solid red;
+}
+
+.form-input, #commentInput {
+    width: 90%;
+    padding: 10px;
+    border: 2px solid pink;
+    border-radius: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#submitBtn{
+    background-color: #c74175;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
 }

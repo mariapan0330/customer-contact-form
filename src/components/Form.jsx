@@ -23,24 +23,26 @@ export default function Form(props) {
 
 
   return (
-    <div id="form">
-        <form action="" onSubmit={handleSubmit}>
-            <h1>Name</h1>
-            <input type='text' id='nameInput' name='name' placeholder='Name' />
-            <h1>Email</h1>
-            <input type='text' id='emailInput' name='email' placeholder='Email' />
-            <h1>Question/Comment</h1>
-            <input type='text' id='commentInput' name='comment' placeholder='Question/Comment' />
-            <br />
-            <p onClick={() => setChecked(!checked)}>
-                <input type='checkbox' id='receiveEmails' name='receiveEmails' checked={checked} value={checked}/>
-                Receive marketing emails
-            </p>
-
-            <br />
-            <input type='Submit' id='submitButton' defaultValue='Submit' />
-            {showErrorMsg && errorMsg}
-        </form>
+    <div className="form123">
+        <div id="form" className='form-container'>
+            <div className='card'>
+                <form action="" onSubmit={handleSubmit} className='contact-form'>
+                    <h1>Name</h1>
+                    <input class='form-input' type='text' id='nameInput' name='name' placeholder='Name' />
+                    <h1>Email</h1>
+                    <input class='form-input' type='text' id='emailInput' name='email' placeholder='Email' />
+                    <h1>Question/Comment</h1>
+                    <textarea id='commentInput' rows='7' name='comment' placeholder='Question/comment'></textarea>
+                    <br />
+                    <p onClick={() => setChecked(!checked)}>
+                        <input type='checkbox' id='receiveEmails' name='receiveEmails' checked={checked} value={checked}/>
+                        Receive marketing emails
+                    </p>
+                    <input type='submit' id='submitBtn' defaultValue='Submit' />
+                    {showErrorMsg && errorMsg}
+                </form>
+            </div>
+        </div>
     </div>
   )
 }
